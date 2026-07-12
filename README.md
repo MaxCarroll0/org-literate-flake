@@ -37,3 +37,7 @@ nix build --impure --expr \
 ```
 
 The result contains `doc.log`, a `status` file (`PASS`/`FAIL`), and the built PDFs.
+
+## Formatting
+
+`nix run .#fmt` (binary `fmt-org`) normalizes sources: trailing whitespace stripped, final newline ensured (these languages have no standard formatter, so formatting is deliberately conservative). Entering the devshell installs a git pre-commit hook that runs every `fmt-*` binary on the PATH over staged files and re-stages them, so stacked language flakes compose. `nix fmt` formats the flake's own nix code (nixfmt-rfc-style). A `.envrc` is included for using this repo directly.
