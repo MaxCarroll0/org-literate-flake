@@ -121,7 +121,7 @@
               pkgs.emacs-nox
               self.packages.${system}.tex
               pkgs.python3Packages.pygments
-              pkgs.gnumake
+              pkgs.just
               pkgs.git
               self.packages.${system}.tangle
               self.packages.${system}.doc
