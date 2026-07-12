@@ -20,7 +20,7 @@ for f in "${orgs[@]}"; do
     continue
   fi
   echo "-- latexmk $dir/$base.tex"
-  if ! (cd "$dir" && TEXINPUTS=".:latex:${TEXINPUTS:-}" latexmk -lualatex -shell-escape -interaction=nonstopmode "$base.tex"); then
+  if ! (cd "$dir" && TEXINPUTS=".//:${TEXINPUTS:-}" latexmk -lualatex -shell-escape -interaction=nonstopmode "$base.tex"); then
     fail=1
   fi
 done
