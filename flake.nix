@@ -154,6 +154,6 @@
         }
       );
 
-      formatter = eachSystem (system: pkgs: pkgs.nixfmt-rfc-style);
+      formatter = eachSystem (system: pkgs: self.packages.${system}.fmt);
     };
 }
